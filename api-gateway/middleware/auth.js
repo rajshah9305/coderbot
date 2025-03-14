@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: 'info',
+  level: process.env.LOG_LEVEL || 'info',
   format: winston.format.json(),
   defaultMeta: { service: 'auth-middleware' },
   transports: [
@@ -15,6 +15,11 @@ const logger = winston.createLogger({
     new winston.transports.File({ filename: 'error.log', level: 'error' })
   ]
 });
+
+if (!process.env.JWT_SECRET) {
+  logger.error('JWT_SECRET environment variable is not set');
+  process.exit(1);
+}
 
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
