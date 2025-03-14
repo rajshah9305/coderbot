@@ -1,0 +1,22 @@
+coding-assistant/
+├── api-gateway/
+│   ├── middleware/
+│   │   └── auth.js
+│   ├── routes/
+│   │   ├── auth.js
+│   │   └── chat.js
+│   ├── Dockerfile
+│   ├── package.json
+│   └── server.js
+├── chat-service/
+│   ├── auth/
+│   │   └── jwt_handler.py
+│   ├── services/
+│   │   ├── ai_service.py
+│   │   ├── conversation_service.py
+│   │   └── vector_db.py
+│   ├── app.py
+│   ├── Dockerfile
+│   └── requirements.txt
+├── .env
+└── docker-compose.yml

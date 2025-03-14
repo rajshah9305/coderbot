@@ -1,0 +1,11 @@
+# MongoDB Configuration
+MONGO_ROOT_USERNAME=admin
+MONGO_ROOT_PASSWORD=password
+
+# API Gateway Configuration
+API_GATEWAY_PORT=3000
+NODE_ENV=production
+JWT_SECRET=your_secure_jwt_secret_key_here
+
+# Chat Service Configuration
+MODEL_NAME=TinyLlama/TinyLlama-1.1B-Chat-v1.0
